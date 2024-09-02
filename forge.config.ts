@@ -8,6 +8,18 @@ import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
 
 const config: ForgeConfig = {
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'ageiwa',
+          name: 'electron-test-auto-update'
+        },
+        prerelease: true
+      }
+    }
+  ],
   packagerConfig: {
     asar: true,
   },

@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "All In One",
   "main": ".vite/build/main.js",
+  "repository": {
+    "url": "https://github.com/ageiwa/electron-test-auto-update"
+  },
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -20,6 +23,7 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron-forge/plugin-vite": "^7.4.0",
+    "@electron-forge/publisher-github": "^7.4.0",
     "@electron/fuses": "^1.8.0",
     "@types/js-cookie": "^3.0.6",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
@@ -47,6 +51,7 @@
     "@walletconnect/web3wallet": "^1.12.3",
     "axios": "^1.7.2",
     "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.2.1",
     "ethers": "^6.13.1",
     "js-cookie": "^3.0.5",
     "lottie-web": "^5.12.2",
@@ -56,6 +61,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "simplebar": "^6.2.7",
     "swiper": "^11.1.4",
+    "update-electron-app": "^3.0.0",
     "viem": "^2.15.1",
     "vue": "^3.4.28",
     "vue-awesome-paginate": "^1.1.46",

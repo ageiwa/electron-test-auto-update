@@ -1,18 +1,11 @@
 import { app, BrowserWindow, globalShortcut } from 'electron';
+import { updateElectronApp } from 'update-electron-app';
 import path from 'path';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
     app.quit();
 }
-
-// protocol.registerSchemesAsPrivileged([{
-//     scheme: 'app',
-//     privileges: {
-//         standard: true,
-//         secure: true
-//     }
-// }]);
 
 const createWindow = () => {
     // Create the browser window.
@@ -43,6 +36,8 @@ const createWindow = () => {
             mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
         }
     });
+
+    updateElectronApp()
 };
 
 // This method will be called when Electron has finished
@@ -71,20 +66,36 @@ app.on('activate', () => {
 // code. You can also put them in separate files and import them here.
 
 app.on('browser-window-focus', () => {
-    globalShortcut.register("CommandOrControl+Shift+R", () => {
-        console.log("CommandOrControl+Shift+R is pressed: Shortcut Disabled");
-    });
+    // globalShortcut.register("CommandOrControl+Shift+R", () => {
+    //     console.log("CommandOrControl+Shift+R is pressed: Shortcut Disabled");
+    // });
 
-    globalShortcut.register("CommandOrControl+R", () => {
-        console.log("CommandOrControl+R is pressed: Shortcut Disabled");
-    });
+    // globalShortcut.register("CommandOrControl+R", () => {
+    //     console.log("CommandOrControl+R is pressed: Shortcut Disabled");
+    // });
 
-    globalShortcut.register("F5", () => {
-        console.log("F5 is pressed: Shortcut Disabled");
-    });
+    // globalShortcut.register("F5", () => {
+    //     console.log("F5 is pressed: Shortcut Disabled");
+    // });
 })
 
 app.on('browser-window-blur', () => {
-    globalShortcut.unregister('CommandOrControl+R');
-    globalShortcut.unregister('F5');
+    // globalShortcut.unregister('CommandOrControl+R');
+    // globalShortcut.unregister('F5');
 })
+
+// autoUpdater.on('update-available', () => {
+//     console.log('update-available')
+// })
+
+// autoUpdater.on('update-downloaded', () => {
+//     console.log('update-downloaded')
+// })
+
+// autoUpdater.on('update-not-available', () => {
+//     console.log('update-not-available')
+// })
+
+// autoUpdater.on('error', (e) => {
+//     console.log('error', e)
+// })
